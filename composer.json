@@ -1,0 +1,17 @@
+{
+    "name": "viettqt/time",
+    "autoload": {
+        "psr-4": {
+            "Viettqt\\Time\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Viet Bui",
+            "email": "vietbh@beetsoft.com.vn"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.4"
+    }
+}
