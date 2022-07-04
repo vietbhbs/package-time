@@ -1,14 +1,17 @@
 <?php
 namespace Viettqt\Time\Controllers;
 
-use Illuminate\Http\Request;
 use Viettqt\Time\Inspire;
 
 class InspirationController
 {
-    public function __invoke(Inspire $inspire) {
-        $quote = $inspire->justDoIt();
+    public function __invoke() {
+        return view('inspire::index');
+    }
 
-        return view('inspire::index', compact('quote'));
+    public function getTime(Inspire $inspire){
+        return response()->json([
+            'time' => $inspire->justDoIt()
+        ]);
     }
 }

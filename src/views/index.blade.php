@@ -11,7 +11,21 @@
 
 <body>
 <div class="container">
-    <h1>{{ $quote }}</h1>
+    <h1 id="time-stamp"></h1>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $(document).ready(function() {
+        setInterval(timestamp, 1000);
+    });
+    function timestamp() {
+        $.ajax({
+            url: `/time`,
+            success: function(data) {
+                $('#time-stamp').html(data.time);
+            },
+        });
+    }
+</script>
 </body>
 </html>
